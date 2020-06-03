@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--<script>
+            var value1 = prompt("Input first number");
+            var value2 = prompt("Input second number");
+            </script>-->
+
+           <p>
+               <p><b>First Number</b></p>
+               <input type="number" id = "value1">
+            </p> 
+            <hr>
+
+            <p>
+                <p><b>Second Number</b></p>
+                <input type="number" id = "value2">
+             </p>
+
+             <p>
+                 <button onclick = "set_operator('plus')">+</button>
+                 <button onclick = "set_operator('minus')">-</button>
+                 <button onclick = "set_operator('times')">*</button>
+                 <button onclick = "set_operator('divide')">/</button>
+             </p>
+
+             <p style = "font-weight:bolder;  color: red;">
+                 Result: <span id = "result_label"></span>
+             </p>
+
+
+       <button onclick="calc()">Click me</button>
+
+        <script>
+
+            var operator_flag;
+            function set_operator(flag) {
+
+                operator_flag = flag;
+            }
+
+            function calc() {
+                var numb1 = Number(document.getElementById("value1").value);
+                var numb2 = Number(document.getElementById("value2").value);
+
+                var result = 0;
+
+                if (operator_flag =="plus"){
+                     result = numb1 + numb2;
+                }
+                else if (operator_flag == "minus"){
+                    result = numb1 - numb2;
+                }
+                else if (operator_flag == "times"){
+                   result = numb1 * numb2;
+                }
+                else if (operator_flag == "divide"){
+                     result = numb1 / numb2;
+                }
+                document.getElementById("result_label").textContent = result;
+            }
+            
+        </script>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
